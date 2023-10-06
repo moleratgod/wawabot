@@ -1,13 +1,14 @@
 from datetime import datetime
 
+# nobody is allowed to comment on my workout routine
 weekdays = ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
-routines = {"Monday"    : "LEG DAY BRO do ur squats or else [Glutes, Quads, and Calves]",
-            "Tuesday"   : "Core day today, Work to your CORE! [Abs, Obliques, and Back]",
-            "Wednesday" : "ARMS DAY LETS FUCKING GOOO [Biceps, Triceps, and Delts]",
-            "Thursday"  : "Leg day AGAIN. [Glutes, Quads, and Calves]",
+routines = {"Monday"    : "LEG DAY [Glutes, Quads, and Calves]",
+            "Tuesday"   : "CORE DAY [Abs, Obliques, and Back]",
+            "Wednesday" : "ARMS DAY [Biceps, Triceps, and Delts]",
+            "Thursday"  : "Leg day AGAIN [Glutes, Quads, and Calves]",
             "Friday"    : "Cardio..",
-            "Saturday"  : "ARMS DAY AGAIN. HAVE FUN [Biceps, Triceps, and Delts]",
-            "Sunday"    : "Cardio again :/"
+            "Saturday"  : "ARMS DAY AGAIN [Biceps, Triceps, and Delts]",
+            "Sunday"    : "Cardio again..."
 }
 
 
