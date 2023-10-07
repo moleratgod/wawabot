@@ -6,7 +6,7 @@ import numberconverter
 import dotenv
 import wawaresources
 import datetime
-
+from getters import github
 
 dotenv.load_dotenv()
 BOT_TOKEN = os.getenv('DISCORD_TOKEN')
@@ -43,6 +43,9 @@ async def modulus(ctx, number_x: int, number_y: int):
     modulus = number_x % number_y
     await ctx.respond(f"{number_x} % {number_y} = {modulus}")
 
+@bot.slash_command(name="github_search", description="Grab information about a specific user")
+async def github_search(ctx, username: str):
+    await ctx.respond(github.get_gh(username))
 
 convert = bot.create_group("convert", "Convert numbers into other numbers")
 
