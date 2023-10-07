@@ -22,3 +22,15 @@ def convertBinary(binary_number):
         return converted_number
     except ValueError:
         return "I cant translate that :( it's not a binary number"
+
+if __name__ == "__main__":
+    number_type = input("Enter which type of number you would like to convert (Binary, Decimal): ").lower()
+    
+    if number_type == "binary":
+        user_number_output = convertBinary(input("Please input a Binary number: "))
+    elif number_type == "decimal": 
+        user_number_output = convertDecimal(input("Please input a decimal number: "))
+    else:
+        user_number_output = "That is not a valid number system."
+
+    print(user_number_output)

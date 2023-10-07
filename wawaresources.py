@@ -9,7 +9,7 @@ routines = {"Monday"    : "LEG DAY [Glutes, Quads, and Calves]",
             "Friday"    : "Cardio..",
             "Saturday"  : "ARMS DAY AGAIN [Biceps, Triceps, and Delts]",
             "Sunday"    : "Cardio again..."
-}
+            }
 
 
 

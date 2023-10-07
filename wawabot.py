@@ -7,7 +7,6 @@ import dotenv
 import wawaresources
 import datetime
 
-# LINK FOR INVITES: https://discord.com/api/oauth2/authorize?client_id=1152464515905114192&permissions=8&scope=bot%20applications.commands
 
 dotenv.load_dotenv()
 BOT_TOKEN = os.getenv('DISCORD_TOKEN')
@@ -26,6 +25,7 @@ async def on_ready():
 
 #  =============== Slash Commands ===============
 
+# Miscellaneous commands for testing the functionality of Discord's API and the bot 
 @bot.slash_command(name="bark", description="woof..")
 async def bark(ctx):
     await ctx.respond("WOOF")
@@ -51,6 +51,7 @@ convert = bot.create_group("convert", "Convert numbers into other numbers")
 async def dec_to_bin(ctx, decimal_number):
     await ctx.respond(numberconverter.convertDecimal(decimal_number))
 
+# Convert binary numbers to base ten
 @convert.command(name="to_base_ten", description="Convert binary numbers to base ten")
 async def bin_to_dec(ctx, binary_number):
     await ctx.respond(numberconverter.convertBinary(binary_number))
