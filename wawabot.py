@@ -10,8 +10,7 @@ from resources import wawaresources
 
 dotenv.load_dotenv()
 BOT_TOKEN = os.getenv('DISCORD_TOKEN')
-DEBUG_CHANNEL = 1152659130058817548
-KENZIE_CHANNEL = 1125824297974366240
+DEBUG_CHANNEL = os.getenv('DEBUG_CHANNEL')
 
 bot = commands.Bot()
 
@@ -47,6 +46,8 @@ async def modulus(ctx, number_x: int, number_y: int):
 async def github_search(ctx, username: str):
     await ctx.respond(github.get_gh(username))
 
+# Creates a slash command group for the convert commands
+
 convert = bot.create_group("convert", "Convert numbers into other numbers")
 
 # Convert base ten numbers to binary
@@ -60,4 +61,3 @@ async def bin_to_dec(ctx, binary_number):
     await ctx.respond(numberconverter.convertBinary(binary_number))
 
 bot.run(BOT_TOKEN)
-
