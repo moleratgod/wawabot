@@ -4,9 +4,9 @@ import os
 from dicecommand import diceroll
 import numberconverter
 import dotenv
-import wawaresources
 import datetime
 from getters import github
+from resources import wawaresources
 
 dotenv.load_dotenv()
 BOT_TOKEN = os.getenv('DISCORD_TOKEN')
@@ -34,9 +34,9 @@ async def bark(ctx):
 async def dice(ctx):
     await ctx.respond(f"```{diceroll()}```")
 
-@bot.slash_command(name="routine", description="Mol's workout routine")
+@bot.slash_command(name="routine", description="Mol's routine")
 async def routine(ctx):
-    await ctx.respond(wawaresources.workoutroutine())
+    await ctx.respond(wawaresources.dailyroutine())
 
 @bot.slash_command(name="modulo", description="Finds the modulus of two integers.")
 async def modulus(ctx, number_x: int, number_y: int):
