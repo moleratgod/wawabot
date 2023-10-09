@@ -16,3 +16,10 @@ git clone https://github.com/moleratgod/wawabot
 cd wawabot
 python3 wawabot.py
 ```
+
+In a `.env` file, you will store your discord bot token, as well as the id of a channel you choose to send debug messages to. The contents of the file should look like this:
+```bash
+# .env
+DISCORD_TOKEN=your_token_goes_here
+DEBUG_CHANNEL=your_channel_id_goes_here
+```
