@@ -10,7 +10,7 @@ from resources import wawaresources
 
 dotenv.load_dotenv()
 BOT_TOKEN = os.getenv('DISCORD_TOKEN')
-DEBUG_CHANNEL = os.getenv('DEBUG_CHANNEL')
+DEBUG_CHANNEL = int(os.getenv('DEBUG_CHANNEL'))
 
 bot = commands.Bot()
 
