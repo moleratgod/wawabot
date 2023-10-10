@@ -44,7 +44,7 @@ async def modulus(ctx, number_x: int, number_y: int):
 
 @bot.slash_command(name="github_search", description="Grab information about a specific user")
 async def github_search(ctx, username: str):
-    await ctx.respond(github.get_gh(username))
+    await ctx.respond(github.getGithub(username))
 
 # Creates a slash command group for the convert commands
 

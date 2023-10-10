@@ -4,7 +4,7 @@ import time
 from json import loads
 
 
-def get_gh(username):
+def getGithub(username):
     link = f'https://api.github.com/users/{username}'
     resp = get(link)
 
@@ -26,3 +26,10 @@ def get_gh(username):
         
 
         return all_data
+
+def profileParser(username):
+    full_dict = getGithub(username)
+    print(full_dict["avatar_url"])
+
+if __name__ == "__main__":
+    profileParser("moleratgod")
