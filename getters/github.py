@@ -28,8 +28,12 @@ def getGithub(username):
         return all_data
 
 def profileParser(username):
-    full_dict = getGithub(username)
-    print(full_dict["avatar_url"])
+    fd = getGithub(username)
+    formatted_profile = f'''{fd["avatar_url"]}
+Username: {fd["login"]}
+Name: {fd["name"]}'''
+    
+    return formatted_profile
 
 if __name__ == "__main__":
-    profileParser("moleratgod")
+    print(profileParser("moleratgod"))
