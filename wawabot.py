@@ -44,7 +44,12 @@ async def modulus(ctx, number_x: int, number_y: int):
 
 @bot.slash_command(name="github_search", description="Grab information about a specific user")
 async def github_search(ctx, username: str):
-    await ctx.respond(github.profileParser(username))
+    embed = discord.Embed(
+        title=f"{username}'s profile",
+        description=github.profileParser(username),
+        color=discord.Colour.blurple(),
+    )
+    await ctx.respond("Here you go:", embed=embed)
 
 # Creates a slash command group for the convert commands
 
