@@ -35,7 +35,11 @@ async def dice(ctx):
 
 @bot.slash_command(name="routine", description="Mol's routine")
 async def routine(ctx):
-    await ctx.respond(wawaresources.dailyroutine())
+    # If you want this command to only work with your account, you can replace my user ID :] or you can remove this if statement
+    if ctx.author.id == 702643363685466163:
+        await ctx.respond(wawaresources.dailyroutine())
+    else:
+        await ctx.respond("You are not authorized to use this command. gooba...")
 
 @bot.slash_command(name="modulo", description="Finds the modulus of two integers.")
 async def modulus(ctx, number_x: int, number_y: int):
