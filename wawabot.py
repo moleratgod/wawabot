@@ -1,5 +1,6 @@
 from discord.ext import commands
 import discord
+from discord.commands import Option
 import os
 from dicecommand import diceroll
 import numberconverter
@@ -7,6 +8,7 @@ import dotenv
 import datetime
 from getters import github
 from resources import wawaresources
+import asyncio
 
 dotenv.load_dotenv()
 BOT_TOKEN = os.getenv('DISCORD_TOKEN')
@@ -40,6 +42,12 @@ async def routine(ctx):
         await ctx.respond(wawaresources.dailyroutine())
     else:
         await ctx.respond("You are not authorized to use this command. gooba...")
+
+@bot.slash_command(name="meditate", description="Sets a timer for meditation :)")
+async def meditate(ctx, custom_time: Option(int, "Choose a time in minutes", required = False, default = 8)):
+    await ctx.respond(f"I've set a timer for {custom_time} minutes.")
+    await asyncio.sleep(custom_time * 60)
+    await ctx.send(f"<@!{ctx.author.id}> Time is up!")
 
 @bot.slash_command(name="github_search", description="Grab information about a specific user")
 async def github_search(ctx, username: str):
