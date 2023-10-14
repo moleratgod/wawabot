@@ -41,11 +41,6 @@ async def routine(ctx):
     else:
         await ctx.respond("You are not authorized to use this command. gooba...")
 
-@bot.slash_command(name="modulo", description="Finds the modulus of two integers.")
-async def modulus(ctx, number_x: int, number_y: int):
-    modulus = number_x % number_y
-    await ctx.respond(f"{number_x} % {number_y} = {modulus}")
-
 @bot.slash_command(name="github_search", description="Grab information about a specific user")
 async def github_search(ctx, username: str):
     profile = github.profileParser(username)
