@@ -8,6 +8,7 @@ Before you can use Wawabot, you will need to install some dependencies.
 ```bash
 pip install py-cord
 pip install bs4
+pip install dotenv
 ```
 
 To install and run Wawabot itself, clone the repository and run the `wawabot.py` file.
