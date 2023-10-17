@@ -29,6 +29,8 @@ def getGithub(username):
 
 def profileParser(username):
     fd = getGithub(username)
+    if fd is None:
+        return ("This user was not found!", "https://avatars.githubusercontent.com/u/9919?s=200&v=4")
     formatted_profile = f"""Username: {fd["login"]}
 Name: {fd["name"]}
 Company: {fd["company"]}
@@ -41,5 +43,5 @@ Most Recent Update: {fd["updated_at"]}
     return (formatted_profile, fd["avatar_url"])
 
 if __name__ == "__main__":
-    profile = profileParser("moleratgod")
+    profile = profileParser("moleratgo")
     print(profile[1])
