@@ -43,5 +43,5 @@ Most Recent Update: {fd["updated_at"]}
     return (formatted_profile, fd["avatar_url"])
 
 if __name__ == "__main__":
-    profile = profileParser("moleratgo")
+    profile = profileParser("moleratgod")
     print(profile[1])
