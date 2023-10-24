@@ -2,13 +2,11 @@ from discord.ext import commands
 import discord
 from discord.commands import Option
 import os
-from dicecommand import diceroll
-import numberconverter
 import dotenv
 import datetime
-from getters import github
-from resources import wawaresources
 import asyncio
+
+from commands import dicecommand, github, numberconverter, wawaresources
 
 dotenv.load_dotenv()
 BOT_TOKEN = os.getenv('DISCORD_TOKEN')
@@ -33,7 +31,7 @@ async def bark(ctx):
 
 @bot.slash_command(name="dice", description="Rolls a 6 sided die.")
 async def dice(ctx):
-    await ctx.respond(f"```{diceroll()}```")
+    await ctx.respond(f"```{dicecommand.diceroll()}```")
 
 @bot.slash_command(name="routine", description="Mol's routine")
 async def routine(ctx):
