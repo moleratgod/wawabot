@@ -13,7 +13,8 @@ BOT_TOKEN = os.getenv('DISCORD_TOKEN')
 DEBUG_CHANNEL = int(os.getenv('DEBUG_CHANNEL'))
 
 bot = commands.Bot()
-
+intents = discord.Intents.all()
+client = discord.Client(intents=intents)
 
 @bot.event
 async def on_ready():
@@ -21,6 +22,11 @@ async def on_ready():
     channel = bot.get_channel(DEBUG_CHANNEL)
     await channel.send("alo im awake")
 
+@bot.event
+async def on_message(message):
+    print(message.content)
+    if "love" in message.content and "wawa" in message.content:
+        await message.channel.send("i love you too :D")
 
 #  =============== Slash Commands ===============
 
