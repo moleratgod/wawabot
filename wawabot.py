@@ -22,11 +22,12 @@ async def on_ready():
     channel = bot.get_channel(DEBUG_CHANNEL)
     await channel.send("alo im awake")
 
-@bot.event
-async def on_message(message):
-    print(message.content)
-    if "love" in message.content and "wawa" in message.content:
-        await message.channel.send("i love you too :D")
+#this thing not working lol
+# @bot.event
+# async def on_message(message):
+#     print(message.content)
+#     if "love" in message.content and "wawa" in message.content:
+#         await message.channel.send("i love you too :D")
 
 #  =============== Slash Commands ===============
 
@@ -34,6 +35,10 @@ async def on_message(message):
 @bot.slash_command(name="bark", description="woof..")
 async def bark(ctx):
     await ctx.respond("WOOF")
+
+@bot.slash_command(name="love", description="Tell wawa you love him...")
+async def love(ctx):
+    await ctx.respond(f"I love you too <@!{ctx.author.id}> :3")
 
 @bot.slash_command(name="dice", description="Rolls a 6 sided die.")
 async def dice(ctx):
